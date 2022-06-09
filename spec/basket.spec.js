@@ -58,11 +58,11 @@ describe("Basket", () => {
 
   //Test 5
   it("Create basket with larger size", () => {
-    const expected = (this.basketSize = largeBasket);
+    const expected = largeBasket;
 
     new Basket(largeBasket);
-    let checkSize = this.basketSize;
-    expect(checkSize).toEqual(expected);
+    let result = this.basketSize;
+    expect(result).toEqual(expected);
   });
 
   //Test 6
@@ -71,8 +71,8 @@ describe("Basket", () => {
 
     basket.addItem("bagel", 3);
     basket.addItem("brownie", 5);
-    let alert = basket.removeItem("Kebab", 10);
-    expect(alert).toEqual(expected);
+    let result = basket.removeItem("Kebab", 10);
+    expect(result).toEqual(expected);
   });
 
   //Test 7
@@ -80,8 +80,8 @@ describe("Basket", () => {
     const expected = 3.99;
 
     basket.priceChecker("brownie");
-    let checkPrice = basket.priceChecker("brownie");
-    expect(checkPrice).toEqual(expected);
+    let result = basket.priceChecker("brownie");
+    expect(result).toEqual(expected);
   });
 
   //Test 8
@@ -96,8 +96,8 @@ describe("Basket", () => {
 
     basket.addItem("chocolateBagel", 3);
 
-    let alert = basket.getBasket();
-    expect(alert).toEqual(expected);
+    let result = basket.addItem();
+    expect(result).toEqual(expected);
   });
 
   //Test 9
