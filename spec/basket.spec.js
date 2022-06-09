@@ -87,14 +87,15 @@ describe("Basket", () => {
   //Test 8
   it("favourite bagel quantity", () => {
     const expected = [
-      { item: "chocolateBagel", quantity: 1, price: 4.99 },
-      { item: "chocolateBagel", quantity: 1, price: 4.99 },
-      { item: "chocolateBagel", quantity: 1, price: 4.99 },
+      {
+        item: "chocolateBagel",
+        quantity: 3,
+        price: 4.99,
+      },
     ];
 
-    basket.addItem("chocolateBagel", 1);
-    basket.addItem("chocolateBagel", 1);
-    basket.addItem("chocolateBagel", 1);
+    basket.addItem("chocolateBagel", 3);
+
     let alert = basket.getBasket();
     expect(alert).toEqual(expected);
   });

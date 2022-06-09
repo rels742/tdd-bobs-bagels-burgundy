@@ -11,16 +11,16 @@ class Basket {
   getBasket() {
     return this.basket;
   }
+
   addItem(itemName, itemQuantity) {
     const fullMenu = menu.GetMenu();
     for (const items in fullMenu) {
       if (items === itemName) {
-        const insideBasket = {
+        this.basket.push({
           item: itemName,
           quantity: itemQuantity,
           price: fullMenu[items],
-        };
-        this.basket.push(insideBasket);
+        });
       }
     }
     return this.basket;
@@ -53,13 +53,12 @@ class Basket {
   }
 
   basketTotal() {
-    let eachItem = [];
+    let totalPrice = 0;
     for (let i = 0; i < this.basket.length; i++) {
-      eachItem.push(this.basket[i].quantity * this.basket[i].price);
+      const items = this.basket[i].quantity * this.basket[i].price;
+      totalPrice += items;
     }
-    const totalPrice = eachItem.reduce((total, quantity) => {
-      return total + quantity;
-    }, 0);
+
     return "£" + totalPrice;
   }
 }
