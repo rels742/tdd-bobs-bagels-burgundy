@@ -58,7 +58,7 @@ describe("Basket", () => {
 
   //Test 5
   it("Create basket with larger size", () => {
-    const expected = largeBasket;
+    const expected = (this.basketSize = largeBasket);
 
     new Basket(largeBasket);
     let result = this.basketSize;

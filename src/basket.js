@@ -27,11 +27,12 @@ class Basket {
   }
 
   removeItem(itemName) {
-    for (let i = 0; i < this.basket.length; i++)
+    for (let i = 0; i < this.basket.length; i++) {
       if (this.basket[i].item === itemName) {
         this.basket.splice(i, 1);
         return this.basket;
-      } else if (this.basket[i].item !== itemName)
+      }
+    } 
         return "This item is not in the basket.";
   }
 
